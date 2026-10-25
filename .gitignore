@@ -1,0 +1,62 @@
+# ==========================================
+# 编译产物与构建目录 (Build Directories)
+# ==========================================
+build/
+bin/
+lib/
+out/
+cmake-build-*/
+
+# ==========================================
+# CMake 生成文件 (CMake Generated Files)
+# ==========================================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Makefile
+build.ninja
+rules.ninja
+.ninja_deps
+.ninja_log
+
+# 编译数据库（生成文件/软链接）
+compile_commands.json
+compile_flags.txt
+
+# ==========================================
+# 编译中间目标文件与二进制 (Compiled Objects & Binaries)
+# ==========================================
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.exe
+*.out
+*.app
+
+# ==========================================
+# 语言服务器与工具缓存 (Language Server & Cache)
+# ==========================================
+.cache/
+.clangd/
+
+# ==========================================
+# 编辑器与系统临时文件 (Editor & OS Temporary Files)
+# ==========================================
+*.swp
+*.swo
+*~
+*.bak
+.DS_Store
+Thumbs.db
+
+# 调试与崩溃转储文件
+core
+core.*
+vgcore.*

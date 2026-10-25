@@ -1,0 +1,104 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "CMake: 构建整个项目 (miniweb)",
+      "command": "cmake -B build -S . -DCMAKE_EXPORT_COMPILE_COMMANDS=ON && cmake --build build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "使用 CMake 构建 miniweb 目标"
+    },
+    {
+      "type": "shell",
+      "label": "CMake: 运行 miniweb",
+      "command": "./build/miniweb",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": "test",
+      "detail": "运行编译生成的 miniweb 可执行文件"
+    },
+    {
+      "type": "shell",
+      "label": "Clang++: 编译当前 C++ 文件",
+      "command": "/usr/bin/clang++",
+      "args": [
+        "-std=c++20",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-I${workspaceFolder}/include",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "使用 clang++ 编译当前打开的 C++ 源文件"
+    },
+    {
+      "type": "shell",
+      "label": "Clang: 编译当前 C 文件",
+      "command": "/usr/bin/clang",
+      "args": [
+        "-std=c17",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-I${workspaceFolder}/include",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "使用 clang 编译当前打开的 C 源文件"
+    },
+    {
+      "type": "shell",
+      "label": "Clang++: 编译并运行当前 C++ 文件",
+      "command": "/usr/bin/clang++ -std=c++20 -g -Wall -Wextra -I${workspaceFolder}/include \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\" && \"${fileDirname}/${fileBasenameNoExtension}\"",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "test",
+      "detail": "使用 clang++ 编译并在终端运行当前程序"
+    },
+    {
+      "type": "shell",
+      "label": "Clang: 编译并运行当前 C 文件",
+      "command": "/usr/bin/clang -std=c17 -g -Wall -Wextra -I${workspaceFolder}/include \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\" && \"${fileDirname}/${fileBasenameNoExtension}\"",
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "test",
+      "detail": "使用 clang 编译并在终端运行当前程序"
+    }
+  ]
+}

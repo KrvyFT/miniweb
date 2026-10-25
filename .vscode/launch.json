@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "LLDB-DAP: 调试 CMake 目标 (miniweb)",
+      "type": "lldb-dap",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/miniweb",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "CMake: 构建整个项目 (miniweb)"
+    },
+    {
+      "name": "CodeLLDB: 调试 CMake 目标 (miniweb)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/miniweb",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "CMake: 构建整个项目 (miniweb)"
+    },
+    {
+      "name": "LLDB-DAP: 调试当前 C++ 文件",
+      "type": "lldb-dap",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "Clang++: 编译当前 C++ 文件"
+    },
+    {
+      "name": "LLDB-DAP: 调试当前 C 文件",
+      "type": "lldb-dap",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "Clang: 编译当前 C 文件"
+    },
+    {
+      "name": "CodeLLDB: 调试当前 C++ 文件",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Clang++: 编译当前 C++ 文件"
+    },
+    {
+      "name": "CodeLLDB: 调试当前 C 文件",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Clang: 编译当前 C 文件"
+    },
+    {
+      "name": "C/C++ (cpptools): LLDB 调试当前文件",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopOnEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "miDebuggerPath": "/usr/bin/lldb",
+      "preLaunchTask": "Clang++: 编译当前 C++ 文件"
+    }
+  ]
+}

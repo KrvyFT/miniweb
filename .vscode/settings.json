@@ -1,0 +1,39 @@
+{
+  // ================= CMake Tools 配置 =================
+  "cmake.buildDirectory": "${workspaceFolder}/build",
+  "cmake.exportCompileCommandsFile": true,
+  "cmake.configureOnOpen": true,
+  // ================= Clangd 语言服务器配置 =================
+  // 推荐在 VSCode 扩展中安装: llvm-vs-code-extensions.vscode-clangd
+  "clangd.path": "/usr/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--compile-commands-dir=${workspaceFolder}/build",
+    "-j=4",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+    "--pch-storage=memory"
+  ],
+  "clangd.fallbackFlags": [
+    "-std=c++20",
+    "-Wall",
+    "-I${workspaceFolder}/include"
+  ],
+  // ================= 调试器 LLDB-DAP 配置 =================
+  // 对应插件: llvm-vs-code-extensions.lldb-dap
+  "lldb-dap.executable-path": "/usr/bin/lldb-dap",
+  // ================= 微软 C/C++ 扩展配置 =================
+  // 对应插件: ms-vscode.cpptools
+  "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+  "C_Cpp.default.cStandard": "c17",
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+  // ================= 代码格式化与编辑设置 =================
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.h": "c",
+    "*.hpp": "cpp",
+    "iostream": "cpp"
+  }
+}
