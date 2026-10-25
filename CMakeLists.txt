@@ -15,7 +15,7 @@ target_compile_options(miniweb_options INTERFACE
 
 add_library(miniweb_core STATIC
     src/app.cpp
-    src/greeting.cpp
+    src/demo.cpp
 )
 
 target_include_directories(miniweb_core PUBLIC
