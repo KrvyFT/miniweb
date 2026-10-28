@@ -35,5 +35,6 @@
     "*.h": "c",
     "*.hpp": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "commentTranslate.source": "Bing"
 }
